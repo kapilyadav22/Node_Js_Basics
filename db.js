@@ -1,9 +1,10 @@
 //moongoose -> works as a bridge between node server and db server
 const mongoose = require('mongoose');
-
+require('dotenv').config();
 //define the mongoDB connection URL
-const mongoURL = 'mongodb://localhost:27017/hotels'
-
+//const mongoURL = process.env.MONGODB_LOCAL_URL
+//to store the sensitive information we use dotenv
+const mongoURL = process.env.MONGODB_URL
 //Set up MongoDB Connection
 mongoose.connect( mongoURL, {
     useNewUrlParser: true,
